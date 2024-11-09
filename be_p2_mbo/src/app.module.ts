@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { SeriesModule } from './series/series.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { InventariosModule } from './inventarios/inventarios.module';
+
 
 @Module({
   imports: [
@@ -21,7 +21,6 @@ import { InventariosModule } from './inventarios/inventarios.module';
       autoLoadEntities: true,
     }),
     SeriesModule,
-    InventariosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

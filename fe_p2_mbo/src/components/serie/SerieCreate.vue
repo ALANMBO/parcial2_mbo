@@ -11,7 +11,7 @@ const ENDPOINT = props.ENDPOINT_API ?? ''
 const titulo = ref('')
 const sinopsis = ref('')
 const director = ref('')
-const categoria = ref('')
+const tipoClasificacion = ref('')
 const temporadas = ref('')
 const fechaEstreno = ref('')
 
@@ -21,7 +21,7 @@ async function crearSerie() {
       titulo: titulo.value,
       sinopsis: sinopsis.value,
       director: director.value,
-      categoria: categoria.value,
+      tipoClasificacion: tipoClasificacion.value,
       temporadas: parseInt(temporadas.value),
       fechaEstreno: fechaEstreno.value ? new Date(fechaEstreno.value) : null
     })
@@ -64,8 +64,14 @@ function goBack() {
           <label for="director">Director</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control custom-input" v-model="categoria" required />
-          <label for="categoria">Categoria</label>
+          <select class="form-control custom-input" v-model="tipoClasificacion" required>
+            <option value="A">Todo Público</option>
+            <option value="B">Para Niños</option>
+            <option value="B12">Público Mayores a 12 años</option>
+            <option value="B15">Público Mayor a 15 años</option>
+            <option value="C">Público Mayor a 18 años</option>
+          </select>
+          <label for="tipoClasificacion">Tipo Clasificación</label>
         </div>
         <div class="form-floating mb-3">
           <input type="text" class="form-control custom-input" v-model="temporadas" required />
@@ -106,6 +112,10 @@ function goBack() {
 
 h2 {
   color: #fff;
+}
+.form-control.custom-input[data-v-b9816f49] {
+    color: #fff;             
+    background-color: #000;  
 }
 
 .btn-link {

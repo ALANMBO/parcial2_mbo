@@ -15,7 +15,7 @@ export class Serie {
   director: string;
 
   @Column('varchar', { length: 100 })
-  categoria: string;
+  tipoClasificacion: string;
 
   @Column('int')
   temporadas: number;

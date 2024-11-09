@@ -11,7 +11,7 @@ const ENDPOINT = props.ENDPOINT_API ?? ''
 const titulo = ref('')
 const sinopsis = ref('')
 const director = ref('')
-const categoria = ref('')
+const tipoClasificacion = ref('')
 const temporadas = ref<number | null>(null)
 const fechaEstreno = ref('')
 const id = router.currentRoute.value.params['id']
@@ -23,7 +23,7 @@ async function editarSerie() {
         titulo: titulo.value,
         sinopsis: sinopsis.value,
         director: director.value,
-        categoria: categoria.value,
+        tipoClasificacion: tipoClasificacion.value,
         temporadas: temporadas.value,
         fechaEstreno: fechaEstreno.value
       })
@@ -38,7 +38,7 @@ async function getSerie() {
     ;(titulo.value = response.data.titulo),
       (sinopsis.value = response.data.sinopsis),
       (director.value = response.data.director),
-      (categoria.value = response.data.categoria),
+      (tipoClasificacion.value = response.data.tipoClasificacion),
       (temporadas.value = parseInt(response.data.temporadas)),
       (fechaEstreno.value = response.data.fechaEstreno)
   })
@@ -99,11 +99,11 @@ onMounted(() => {
           <input
             type="text"
             class="form-control"
-            v-model="categoria"
-            placeholder="Categoria"
+            v-model="tipoClasificacion"
+            placeholder="Tipo Clasificación"
             required
           />
-          <label for="director">Categoria</label>
+          <label for="tipoClasificacion">Tipo Clasificación</label>
         </div>
         <div class="form-floating mb-3">
           <input

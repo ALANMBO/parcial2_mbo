@@ -3,7 +3,7 @@ export interface Serie {
   titulo: string
   sinopsis: string
   director: string
-  categoria: string
+  tipoClasificacion: string
   temporadas: number
   fechaEstreno: Date
 }

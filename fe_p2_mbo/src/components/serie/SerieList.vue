@@ -57,7 +57,7 @@ onMounted(() => {
             <th scope="col">Título</th>
             <th scope="col">Sinopsis</th>
             <th scope="col">Director</th>
-            <th scope="col">Categoria</th>
+            <th scope="col">Tipo Clasificación</th>
             <th scope="col">Temporadas</th>
             <th scope="col">Fecha de Estreno</th>
           </tr>
@@ -68,7 +68,7 @@ onMounted(() => {
             <td>{{ serie.titulo }}</td>
             <td>{{ serie.sinopsis }}</td>
             <td>{{ serie.director }}</td>
-            <td>{{ serie.categoria }}</td>
+            <td>{{ serie.tipoClasificacion }}</td>
             <td>{{ serie.temporadas }}</td>
             <td>{{ serie.fechaEstreno }}</td>
             <td>
